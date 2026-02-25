@@ -1,179 +1,199 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Ed Blog</title>
+  <meta charset="UTF-8">
+  <title>De los disquetes a la nube</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body {
-  background-color: #c0c0c0;
-  font-family: Tahoma, Verdana, Arial, sans-serif;
-  font-size: 14px;
-  margin: 0;
-  padding: 0;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #111;
+    }
 
-/* Top bar */
-#topbar {
-  background-color: #003399;
-  color: white;
-  padding: 10px;
-  font-size: 18px;
-  font-weight: bold;
-}
+    .hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
 
-/* Layout */
-#container {
-  width: 900px;
-  margin: 20px auto;
-  background-color: #ffffff;
-  border: 2px solid #000;
-}
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
 
-#content {
-  display: table;
-  width: 100%;
-}
+    .subtitle {
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 30px;
+    }
 
-#left {
-  width: 250px;
-  background-color: #e6e6e6;
-  padding: 10px;
-  display: table-cell;
-  vertical-align: top;
-}
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+    }
 
-#right {
-  padding: 15px;
-  display: table-cell;
-  vertical-align: top;
-}
+    .btn {
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-size: 1rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s ease;
+    }
 
-/* Boxes */
-.box {
-  border: 1px solid #000;
-  background-color: #f5f5f5;
-  margin-bottom: 10px;
-}
+    .btn-primary {
+      background-color: black;
+      color: white;
+    }
 
-.box h3 {
-  background-color: #003399;
-  color: white;
-  margin: 0;
-  padding: 5px;
-  font-size: 14px;
-}
+    .btn-primary:hover {
+      background-color: #333;
+    }
 
-.box p, .box ul {
-  padding: 8px;
-  margin: 0;
-}
+    .btn-secondary {
+      background-color: white;
+      color: black;
+      border: 1px solid #ccc;
+    }
 
-a {
-  color: #003399;
-  text-decoration: none;
-}
+    .btn-secondary:hover {
+      background-color: #eee;
+    }
 
-a:hover {
-  text-decoration: underline;
-}
+    /* Tarjetas */
+    .cards-container {
+      display: flex;
+      gap: 30px;
+      padding: 20px 40px 60px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+    }
 
-/* Footer */
-#footer {
-  background-color: #003399;
-  color: white;
-  text-align: center;
-  padding: 5px;
-  font-size: 12px;
-}
-</style>
+    .cards-container::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .cards-container::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 10px;
+    }
+
+    .card {
+      min-width: 300px;
+      max-width: 300px;
+      background: white;
+      border-radius: 20px;
+      text-decoration: none;
+      color: black;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 20px 20px 0 0;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+    }
+
+    .card p {
+      margin: 0;
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .cards-container {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div id="topbar">
-  Ed — Personal Blog
-</div>
-
-<div id="container">
-  <div id="content">
-
-    <!-- LEFT COLUMN -->
-    <div id="left">
-
-      <div class="box">
-        <h3>Profile</h3>
-        <p>
-          Name: ? ? ?<br>
-          Location: Somewhere<br>
-          Status: Offline<br>
-          Mood: thinking...
-        </p>
-      </div>
-
-      <div class="box">
-        <h3>Navigation</h3>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="posts.html">Blog Entries</a></li>
-          <li><a href="about.html">About Me</a></li>
-          <li><a href="links.html">Links</a></li>
-        </ul>
-      </div>
-
-      <div class="box">
-  <h3>Music Player</h3>
-  <p>
-    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/22/OnceNightwishCover.jpg/250px-OnceNightwishCover.jpg" width="150"><br>
-    <strong>Song:</strong> Bye Bye Beautiful<br>
-    <strong>Artist:</strong> Nightwish<br>
-    <strong>Status:</strong> paused
-  </p>
-</div>
-
+  <section class="hero">
+    <h1>De los disquetes a la nube</h1>
+    <div class="subtitle">
+      Transformación tecnológica y el papel de la mujer en Chile a través de un caso familiar (1990–2025)
     </div>
 
-    <!-- RIGHT COLUMN -->
-    <div id="right">
+    <div class="buttons">
+      <a href="https://tudominio-contexto.cl" class="btn btn-primary">
+        Empezar
+      </a>
 
-      <div class="box">
-        <h3>Welcome</h3>
-        <p>
-          Welcome to my personal website.<br><br>
-          This is a space to write thoughts, ideas,
-          half-finished essays, and things I don’t
-          know where else to put.<br><br>
-          Some entries are in English, others in Spanish.
-          That’s intentional lol.
-        </p>
-      </div>
-
-      <div class="box">
-        <h3>Latest Entry</h3>
-        <p>
-          <strong>Why I keep writing things nobody asked for</strong><br>
-          <em>Posted: ?</em><br><br>
-          I keep coming back to writing even when
-          there’s no audience. Maybe that’s the point.
-        </p>
-      </div>
-
-      <div class="box">
-        <h3>Status Update</h3>
-        <p>
-          Ed is currently rebuilding the internet
-          as it should have been.
-        </p>
-      </div>
-
+      <a href="https://tudominio-fuentes.cl" class="btn btn-secondary">
+        Fuentes y metodología
+      </a>
     </div>
+  </section>
 
-  </div>
-</div>
+  <section class="cards-container">
 
-<div id="footer">
-  © 2004–2025 Ed | Best viewed at 1024x768
-</div>
+    <a href="https://tudominio-contexto.cl" class="card">
+      <img src="https://picsum.photos/400/400?random=1" alt="">
+      <div class="card-content">
+        <h3>Contexto: Chile 1990</h3>
+        <p>Panorama político, social y tecnológico del Chile de inicios de los años noventa.</p>
+      </div>
+    </a>
+
+    <a href="https://tudominio-formacion.cl" class="card">
+      <img src="https://picsum.photos/400/400?random=2" alt="">
+      <div class="card-content">
+        <h3>Formación y primeros años</h3>
+        <p>Educación, experiencias iniciales y primeros contactos con la tecnología.</p>
+      </div>
+    </a>
+
+    <a href="https://tudominio-transformacion.cl" class="card">
+      <img src="https://picsum.photos/400/400?random=3" alt="">
+      <div class="card-content">
+        <h3>Transformación digital (2000–2025)</h3>
+        <p>Del internet inicial a la nube y la digitalización acelerada.</p>
+      </div>
+    </a>
+
+    <a href="https://tudominio-mujer.cl" class="card">
+      <img src="https://picsum.photos/400/400?random=4" alt="">
+      <div class="card-content">
+        <h3>Mujer y tecnología</h3>
+        <p>Desafíos, avances y rol femenino en el ecosistema tecnológico chileno.</p>
+      </div>
+    </a>
+
+    <a href="https://tudominio-reflexion.cl" class="card">
+      <img src="https://picsum.photos/400/400?random=5" alt="">
+      <div class="card-content">
+        <h3>Reflexión histórica</h3>
+        <p>Análisis final sobre memoria, cambio tecnológico y experiencia generacional.</p>
+      </div>
+    </a>
+
+  </section>
 
 </body>
 </html>
